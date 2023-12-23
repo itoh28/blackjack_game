@@ -80,7 +80,7 @@ class Game
         } elseif ($this->player->totalScore() > 21 && $this->dealer->totalScore() <= 21) {
             echo $this->dealer->getName().'の勝ちです！'."\n";
         } else {
-            echo '同点です！'."\n";
+            echo '引き分けです！'."\n";
         }
     }
 }
