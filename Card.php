@@ -12,21 +12,14 @@ class Card
         $this->number = $number;
     }
 
-    public function score($currentScore)
+    public function score()
     {
         if ($this->number === 'A') {
-            $score1 = $currentScore + 1;
-            $score11 = $currentScore +11;
-            
-            if ($score11 <= 21) {
-                return $score11;
-            } else {
-                return $score1;
-            }
+            return 11;
         } elseif ($this->number === '10' || $this->number === 'J' || $this->number === 'Q' ||$this->number === 'K') {
-            return $currentScore + 10;
+            return 10;
         } else {
-            return $currentScore + $this->number;
+            return $this->number;
         }
     }
 

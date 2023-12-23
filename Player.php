@@ -32,16 +32,15 @@ class Player
         $ace = 0;
 
         foreach ($this->hand as $card) {
-            $handTotal += $card->score($handTotal);
-
+            $handTotal += $card->score();
             if ($card->getNumber() === 'A') {
-                $aceCount++;
+                $ace++;
             }
         }
 
-        while ($aceCount > 0 && $handTotal > 21) {
+        while ($ace > 0 && $handTotal > 21) {
             $handTotal -= 10;
-            $aceCount --;
+            $ace --;
         }
         
         return $handTotal;
