@@ -15,7 +15,7 @@ class Card
     public function score()
     {
         if ($this->number === 'A') {
-            return 1;
+            return 11;
         } elseif ($this->number === '10' || $this->number === 'J' || $this->number === 'Q' ||$this->number === 'K') {
             return 10;
         } else {

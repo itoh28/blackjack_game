@@ -28,13 +28,22 @@ class Player
 
     public function totalScore()
     {
-        $score = 0;
+        $handTotal = 0;
+        $ace = 0;
 
         foreach ($this->hand as $card) {
-            $score += $card->score();
+            $handTotal += $card->score();
+            if ($card->getNumber() === 'A') {
+                $ace++;
+            }
+        }
+
+        while ($ace > 0 && $handTotal > 21) {
+            $handTotal -= 10;
+            $ace --;
         }
         
-        return $score;
+        return $handTotal;
     }
 
     public function getName()
